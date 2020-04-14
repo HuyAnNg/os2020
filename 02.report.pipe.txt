@@ -1,0 +1,38 @@
+an@an-VivoBook-S15-X530UN:~$ ls| grep list
+filelist
+listfile
+------------------------------------------------
+an@an-VivoBook-S15-X530UN:~$ wc -l /etc/passwd
+46 /etc/passwd
+------------------------------------------------
+an@an-VivoBook-S15-X530UN:~$ free -m
+              total        used        free      shared  buff/cache   available
+Mem:           7843        1051        5505         218        1286        6314
+Swap:           662           0         662
+------------------------------------------------
+an@an-VivoBook-S15-X530UN:~$ free -m | grep Mem | awk '{print$2}'
+7843
+------------------------------------------------
+an@an-VivoBook-S15-X530UN:~$ cd /proc
+an@an-VivoBook-S15-X530UN:/proc$ cat cpuinfo | grep core
+core id		: 0
+cpu cores	: 4
+core id		: 1
+cpu cores	: 4
+core id		: 2
+cpu cores	: 4
+core id		: 3
+cpu cores	: 4
+core id		: 0
+cpu cores	: 4
+core id		: 1
+cpu cores	: 4
+core id		: 2
+cpu cores	: 4
+core id		: 3
+cpu cores	: 4
+
+------------------------------------------------
+an@an-VivoBook-S15-X530UN:~$ ~/Pictures$ find ~/Pictures/*.png | wc -l
+0
+

@@ -1,0 +1,38 @@
+an@an-VivoBook-S15-X530UN:~$ ps -A | tail -10
+ 3582 ?        00:00:05 gnome-terminal-
+ 3593 pts/0    00:00:00 bash
+ 3616 ?        00:00:00 gvfsd-network
+ 3618 ?        00:00:00 kworker/0:0-events
+ 3620 ?        00:00:00 kworker/1:1-events
+ 3648 ?        00:00:00 gvfsd-dnssd
+ 3737 ?        00:00:00 kworker/7:0-mm_percpu_wq
+ 3748 ?        00:00:00 kworker/4:1-mm_percpu_wq
+ 3904 pts/0    00:00:00 ps
+ 3905 pts/0    00:00:00 tail
+-----------------------------------------
+an@an-VivoBook-S15-X530UN:~$  gnome-text-editor
+(text-editor appears)
+-----------------------------------------
+an@an-VivoBook-S15-X530UN:~$ ps -A | grep firefox
+ 2348 ?        00:01:01 firefox
+-----------------------------------------
+an@an-VivoBook-S15-X530UN:~$ cat /proc/2348/status | tail -10
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Speculation_Store_Bypass:	thread vulnerable
+Cpus_allowed:	ff
+Cpus_allowed_list:	0-7
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	126936
+nonvoluntary_ctxt_switches:	1246
+-----------------------------------------
+an@an-VivoBook-S15-X530UN:~$ kill -stop 2348
+bash: kill: top: invalid signal specification
+-----------------------------------------
+an@an-VivoBook-S15-X530UN:~$ kill -cont 2348
+bash: kill: pause: invalid signal specification
+-----------------------------------------
+an@an-VivoBook-S15-X530UN:~$ kill -kill 2348
+

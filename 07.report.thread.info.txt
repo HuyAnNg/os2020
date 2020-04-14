@@ -1,0 +1,18 @@
+an@an-VivoBook-S15-X530UN:~$ ps -A | grep firefox
+ 4469 ?        00:01:33 firefox
+
+---------------------------------------------------
+
+an@an-VivoBook-S15-X530UN:~$ ps -o nlwp 4469
+NLWP
+  77
+
+---------------------------------------------------
+
+an@an-VivoBook-S15-X530UN:~$ cd /proc/4469/task
+
+---------------------------------------------------
+
+an@an-VivoBook-S15-X530UN:/proc/4469/task$ ls | wc -l
+77
+
